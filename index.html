@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learn Vue</title>
+
+	<style>
+		/*.color-red { color: red; }*/
+		/*.color-blue { color: blue; }*/
+		/*.is-loading { background: red; }*/
+	</style>
+</head>
+<body>
+	<div id="root">
+<!-- 		<input type="text" id="input" v-model="message">
+
+		<p>The value of the input is : {{ message }}</p> -->
+
+		<!-- {{ name }} -->
+		<!-- <ul> -->
+			<!-- <li v-for="name in names">{{ name }}<li> -->
+			<!-- <li v-for="name in names" v-text="name"></li> -->
+		<!-- </ul> -->
+
+		<!-- <input id="input" type="text" v-model="newName"> -->
+		<!-- <button @click="addName">Add Name</button> -->
+		<!-- <button title="I am the title of the button">Hover me</button> -->
+		<!-- <button :title="title">Hover me</button> -->
+		<!-- <h1 :class="className">Hello World</h1> -->
+<!-- 		<button :class="{ 'is-loading' : isLoading }" @click="toggleClass">Click Me</button> -->
+
+		<!-- <h1 v-text="new Date()"></h1> -->
+		<!-- <h1> -->
+			<!-- {{ reversedMessage }} -->
+			<!-- {{ message.split('').reverse().join('') }} -->
+		<!-- </h1> -->
+		<h1>All Task</h1>
+		<ul>
+			<li v-for="task in tasks" v-text="task.description"></li>
+		</ul>
+
+		<h1>Incomplete Task</h1>
+		<ul>
+			<li v-for="task in incompleteTasks" v-text="task.description"></li>
+		</ul>
+	</div>
+
+	<script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+	
+	<script>
+		// let data = {
+		// 	message: 'Hello World'
+		// };
+
+		// document.querySelector('#input').value = data.message;
+
+		// new Vue({
+		// 	el: '#root',
+		// 	data: {
+		// 		message: 'Hello World'
+		// 	}
+		// })
+
+		var app = new Vue({
+			el: '#root',
+			// newName: '',
+			data: {
+				// foo: 'bar',
+				// name: 'Joe'
+				// names: ['Joe', 'Mary', 'Jane', 'Jack']
+				// title: 'Not the title is being set trough Javascript.'
+				// className: 'color-red'
+				// isLoading: false
+				// message: 'Hello World'
+				tasks: [
+					{ description: 'Go to the store', completed: true },
+					{ description: 'Finish Screencast', completed: false },
+					{ description: 'Make Donation', completed: false },
+					{ description: 'Clear Inbox', completed: false },
+					{ description: 'Make Dinner', completed: false },
+					{ description: 'Clean room', completed: true },
+				]
+			},
+			computed: {
+				// reversedMessage() {
+				// 	return this.message.split('').reverse().join('')
+				// }
+				incompleteTasks() {
+					return this.tasks.filter(task => ! task.completed);
+				}
+			},
+			methods: {
+				// toggleClass() {
+				// 	this.isLoading = true;
+				// }
+				// addName() {          
+				// 	// alert('adding name')
+				// 	this.names.push(this.newName);
+
+				// 	this.newName = '';
+				// }
+			},
+			mounted() {
+				// alert('ready')
+				// document.querySelector('#button').addEventListener('click', () => {
+				// 	let name = document.querySelector('#input');
+
+				// 	app.names.push(name.value);
+
+				// 	name.value = '';
+				// });
+			}
+		});
+
+		// document.querySelector('#button').addEventListener('click', () => {
+		// 	let name = document.querySelector('#input');
+
+		// 	app.names.push(name.value);
+
+		// 	name.value = '';
+		// });
+	</script>
+</body>
+</html>
