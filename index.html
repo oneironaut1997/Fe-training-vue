@@ -9,8 +9,16 @@
 		/*.is-loading { background: red; }*/
 	</style>
 </head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css" integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ==" crossorigin="anonymous" />
+
+<style>
+	body {
+		padding-top: 40px;
+	}
+</style>
 <body>
-	<div id="root">
+	<div id="root" class="container">
 <!-- 		<input type="text" id="input" v-model="message">
 
 		<p>The value of the input is : {{ message }}</p> -->
@@ -33,7 +41,7 @@
 			<!-- {{ reversedMessage }} -->
 			<!-- {{ message.split('').reverse().join('') }} -->
 		<!-- </h1> -->
-		<h1>All Task</h1>
+<!-- 		<h1>All Task</h1>
 		<ul>
 			<li v-for="task in tasks" v-text="task.description"></li>
 		</ul>
@@ -41,12 +49,82 @@
 		<h1>Incomplete Task</h1>
 		<ul>
 			<li v-for="task in incompleteTasks" v-text="task.description"></li>
-		</ul>
+		</ul> -->
+		<!-- <task-list>
+			<task>Go to the store</task>
+		<task>Go to the store</task>
+		<task>Go to the bank</task>
+		<task>Go to work</task>
+		</task-list> -->
+<!-- 		<task></task>
+		<task></task>
+		<task></task>
+		<task></task> -->
+<!-- 		<task-list>
+			<task></task>
+		</task-list> -->
+
+<!-- 	<message title="Hello World" body="Lorem ipsum dolar sit amet."></message>
+
+	<message title="Hello Universe" body="Bla bla bla."></message> -->
+
+<!-- 	<modal v-if="showModal" @close="showModal = false">
+		<p>We insert any text here.</p>
+	</modal>
+
+	<button @click="showModal = true">Show Modal</button> -->
+
+<!-- 	<ul id="tabs">
+		<li><a href="#">About</a></li>
+		<li><a href="#">About Us</a></li>
+		<li><a href="#">About Our Culture</a></li>
+	</ul>
+
+	<div class="tab-panels">
+		
+	</div> -->
+
+<!-- 	<tabs>
+		<tab name="About Us" :selected="true">
+			<h1>Here is the content for the about us tab.</h1>
+		</tab>
+		<tab name="About Our Culture">
+			<h1>Here is the content for the about our culture tab.</h1>
+		</tab>	
+		<tab name="About Our Vision">
+			<h1>Here is the content for the about our vision tab.</h1>
+		</tab>
+
+		<tab name="About Our Other Things">
+			<h1>Here is the content for the about our other things.</h1>
+		</tab>			
+	</tabs> -->
+
+<!-- 	<coupon @applied="onCouponApplied"></coupon>
+	<h1 v-if="couponApplied">You used a coupon!</h1> -->
+<!-- 	<modal>
+		<template slot="header">My Title</template>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum numquam, possimus facilis velit aspernatur ratione.
+		<template slot="footer">
+			<button class="button is-success">Save changes</button>
+	      	<button class="button">Cancel</button>
+		</template>
+	</modal>
+ -->	
+	<progress-view inline-template>
+		<div>
+			<h1>Your Progress Through This Course Is {{ completionRate }}%</h1>
+			<p><button @click="completionRate += 10">Update Completaion Rate</button></p>
+		</div>
+	</progress-view>	
+	
 	</div>
 
 	<script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+
+	<script src="main.js"></script>
 	
-	<script>
+<!-- 	<script>
 		// let data = {
 		// 	message: 'Hello World'
 		// };
@@ -71,22 +149,22 @@
 				// className: 'color-red'
 				// isLoading: false
 				// message: 'Hello World'
-				tasks: [
-					{ description: 'Go to the store', completed: true },
-					{ description: 'Finish Screencast', completed: false },
-					{ description: 'Make Donation', completed: false },
-					{ description: 'Clear Inbox', completed: false },
-					{ description: 'Make Dinner', completed: false },
-					{ description: 'Clean room', completed: true },
-				]
+				// tasks: [
+				// 	{ description: 'Go to the store', completed: true },
+				// 	{ description: 'Finish Screencast', completed: false },
+				// 	{ description: 'Make Donation', completed: false },
+				// 	{ description: 'Clear Inbox', completed: false },
+				// 	{ description: 'Make Dinner', completed: false },
+				// 	{ description: 'Clean room', completed: true },
+				// ]
 			},
 			computed: {
 				// reversedMessage() {
 				// 	return this.message.split('').reverse().join('')
 				// }
-				incompleteTasks() {
-					return this.tasks.filter(task => ! task.completed);
-				}
+				// incompleteTasks() {
+				// 	return this.tasks.filter(task => ! task.completed);
+				// }
 			},
 			methods: {
 				// toggleClass() {
@@ -119,5 +197,5 @@
 		// 	name.value = '';
 		// });
 	</script>
-</body>
+ --></body>
 </html>
